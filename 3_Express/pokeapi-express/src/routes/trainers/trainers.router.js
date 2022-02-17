@@ -4,7 +4,7 @@ const TrainersServices = require('../../services/trainers/trainers.services');
 
 const serviceTrainerObject = new TrainersServices();
 
-trainerRouter.get("/", (req, res) =>{
+trainerRouter.get("/", async (req, res) =>{
 	const {page, size} = req.query;
 	const allTrainers = await serviceTrainerObject.find();
 	let pagination = {};
